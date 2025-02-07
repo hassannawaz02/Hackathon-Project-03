@@ -1,13 +1,13 @@
 import { Rule } from "@sanity/types";
 
-export default {
+const contactFormSchema = {
   name: "contactForm",
   title: "Contact Form",
   type: "document",
   fields: [
     {
       name: "fullName",
-      title: "fullName",
+      title: "Full Name",
       type: "string",
       validation: (Rule: Rule) => Rule.required().error("Name is required"),
     },
@@ -19,17 +19,17 @@ export default {
         Rule.required().email().error("A valid email address is required"),
     },
     {
-        name: "shippingAddress",
-        title: "shippingAddress",
-        type: "string",
-        validation: (Rule: Rule) => Rule.required().error("shippingAddress is required"),
-      },
-      {
-        name: "phoneNumber",
-        title: "phoneNumber",
-        type: "string",
-       
-      },
-  
+      name: "shippingAddress",
+      title: "Shipping Address",
+      type: "string",
+      validation: (Rule: Rule) => Rule.required().error("Shipping Address is required"),
+    },
+    {
+      name: "phoneNumber",
+      title: "Phone Number",
+      type: "string",
+    },
   ],
-}
+};
+
+export default contactFormSchema;

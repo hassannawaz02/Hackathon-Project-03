@@ -1,6 +1,6 @@
 import { Rule } from "@sanity/types";
 
-export default {
+const ordersSchema = {
   name: "orders",
   title: "Orders",
   type: "document",
@@ -23,7 +23,7 @@ export default {
           fields: [
             {
               name: "TrackingId",
-              title: "TrackingId",
+              title: "Tracking ID",
               type: "string",
               readOnly: true, // Sanity automatically assigns this
             },
@@ -61,3 +61,5 @@ export default {
     },
   ],
 };
+
+export default ordersSchema;
